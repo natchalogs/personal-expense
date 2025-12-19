@@ -5,7 +5,12 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      // เพิ่มตรงนี้: บอกว่าถ้าใช้ font-sans ให้เอา Prompt ขึ้นก่อน
+      fontFamily: {
+        sans: ['Prompt', 'sans-serif'],
+      },
+    },
   },
   plugins: [],
 }

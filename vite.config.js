@@ -6,15 +6,15 @@ export default defineConfig({
   plugins: [
     react(),
     VitePWA({
-      registerType: 'autoUpdate', // อัปเดตแอปอัตโนมัติเมื่อมีการแก้โค้ด
+      registerType: 'autoUpdate',
       includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'mask-icon.svg'],
       manifest: {
-        name: 'Personal Expense', // ชื่อเต็มของแอป
-        short_name: 'P Expense',      // ชื่อที่โชว์ใต้ไอค่อนบนหน้าจอมือถือ
+        name: 'Expense Tracker', // แก้ชื่อเต็ม
+        short_name: 'P Expense',           // แก้ชื่อย่อใต้ไอคอน
         description: 'แอปบันทึกรายจ่ายส่วนตัว',
-        theme_color: '#0f172a',      // สีแถบสถานะ (แนะนำให้ตรงกับธีมแอป)
-        background_color: '#ffffff',
-        display: 'standalone',       // ทำให้ไม่มีแถบ URL เหมือนแอปจริง
+        theme_color: '#F5F5F7',          // <--- แก้จุดนี้ครับ! (จากเดิม #0f172a)
+        background_color: '#F5F5F7',     // <--- แก้จุดนี้ด้วยครับ (จากเดิม #ffffff)
+        display: 'standalone',
         icons: [
           {
             src: 'pwa-192x192.png',
@@ -30,7 +30,7 @@ export default defineConfig({
             src: 'pwa-512x512.png',
             sizes: '512x512',
             type: 'image/png',
-            purpose: 'any maskable' // ช่วยให้ไอค่อนปรับรูปทรงตามมือถือแต่ละรุ่นได้
+            purpose: 'any maskable'
           }
         ]
       }
