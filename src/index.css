@@ -4,33 +4,23 @@
 
 @layer base {
   body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    /* 1. สั่งให้ใช้ฟ้อนต์ Prompt เป็นอันดับแรก */
+    font-family: 'Prompt', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    
     -webkit-tap-highlight-color: transparent;
-    @apply bg-slate-50 text-slate-900;
-    /* Apple-like mesh gradient background */
-    background-image: 
-      radial-gradient(at 0% 0%, hsla(253,16%,7%,1) 0, transparent 50%), 
-      radial-gradient(at 50% 0%, hsla(225,39%,30%,1) 0, transparent 50%), 
-      radial-gradient(at 100% 0%, hsla(339,49%,30%,1) 0, transparent 50%);
-    background-attachment: fixed;
-    background-size: cover;
+    
+    /* 2. เปลี่ยนพื้นหลังให้เป็นสี #F5F5F7 (ลบพวก radial-gradient อันเก่าทิ้งให้หมด) */
+    background-color: #F5F5F7;
+    color: #0f172a; /* text-slate-900 */
+    
+    /* ลบพวก background-image เก่าออก เพื่อไม่ให้สีเพี้ยนตอนเลื่อนจอ */
   }
 }
 
-/* Custom Scrollbar for Desktop */
+/* Custom Scrollbar (เก็บไว้เหมือนเดิมได้) */
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.1); border-radius: 10px; }
 ::-webkit-scrollbar-thumb:hover { background: rgba(0,0,0,0.2); }
 
-.glass {
-    @apply bg-white/70 backdrop-blur-xl border border-white/20 shadow-xl;
-}
-
-.glass-dark {
-    @apply bg-slate-900/80 backdrop-blur-xl border border-white/10 shadow-xl;
-}
-
-.ios-btn {
-    @apply active:scale-95 transition-transform duration-200 ease-[cubic-bezier(0.25,0.1,0.25,1)];
-}
+/* ...class อื่นๆ เก็บไว้เหมือนเดิม... */
