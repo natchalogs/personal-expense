@@ -429,7 +429,7 @@ function App() {
         <div className="min-h-screen bg-[#F5F5F7] text-slate-900 font-sans pb-24">
             
             {/* 1. FIXED HEADER (Truly Sticky) */}
-            <div className="fixed top-0 left-0 right-0 z-50 bg-[#F5F5F7]/95 backdrop-blur-xl border-b border-slate-200/50 shadow-sm transition-all duration-300">
+            <div className="fixed top-0 left-0 right-0 z-50 bg-[#F5F5F7] border-b border-slate-200/50 shadow-sm transition-all duration-300">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     {/* Top Nav */}
                     <div className="h-16 flex justify-between items-center">
