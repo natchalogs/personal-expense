@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body { 
+    font-family: 'Sarabun', sans-serif; 
+    -webkit-tap-highlight-color: transparent; 
+    background-color: #f8fafc;
+}
+
+/* Skeleton Effect (ยังคงไว้ใช้ตอนโหลด) */
+.skeleton {
+    background: #e2e8f0;
+    background-image: linear-gradient(to right, #e2e8f0 0%, #f1f5f9 20%, #e2e8f0 40%, #e2e8f0 100%);
+    background-repeat: no-repeat;
+    background-size: 800px 104px; 
+    animation: shimmer 1.5s infinite linear forwards;
+    border-radius: 0.5rem;
+}
+@keyframes shimmer { 0% { background-position: -468px 0; } 100% { background-position: 468px 0; } }
+
+input::-webkit-outer-spin-button, input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+input[type=number] { -moz-appearance: textfield; appearance: textfield; }
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+.pb-safe { padding-bottom: env(safe-area-inset-bottom); }

@@ -1,0 +1,14 @@
+image: node:latest  # 1. ใช้เครื่องที่มี Node.js
+
+pages:
+  stage: deploy
+  script:
+    - npm install        # 2. ลงโปรแกรมเสริม (Dependencies)
+    - npm run build      # 3. สั่งสร้างเว็บ (จะได้โฟลเดอร์ dist ออกมา)
+    - rm -rf public      # 4. ลบโฟลเดอร์ public เดิมทิ้ง (กันงง)
+    - mv dist public     # 5. เปลี่ยนชื่อโฟลเดอร์ dist เป็น public (เพราะ GitLab จะเอาโฟลเดอร์ชื่อ public ไปโชว์)
+  artifacts:
+    paths:
+      - public           # 6. บอก GitLab ว่าเว็บอยู่ที่นี่นะ
+  only:
+    - main
